@@ -1,0 +1,42 @@
+.toto {
+  font-family: 'Roboto';
+  background-color: #FFA69E;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #FF695C;
+}
+
+.brown {
+  background-color: #8C5E58;
+}
+
+.brown:hover {
+  background-color: burlywood;
+}
+
+.yellow {
+  background-color: yellowgreen;
+}
+
+.small {
+  padding: 4px 12px;
+}
+
+.medium { 
+  padding: 8px 12px;
+}
+
+.large {
+  padding: 12px 12px;
+}
+
+.full {
+  width: 100%;
+  text-align: center;
+}
