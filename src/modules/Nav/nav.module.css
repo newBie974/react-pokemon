@@ -1,5 +1,21 @@
 .nav {
+  font-family: 'Roboto';
   margin-top: 40px;
   background-color: #FBFBFF;
   width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.ul { 
+  list-style-type: none;
+}
+
+.li {
+  float: left;
+  display: block;
+  padding-left: 15px;
 }

@@ -16,16 +16,15 @@ const Nav = ({
     <Router>
       <div>
         <nav className={styles.nav}>
-          <ul>
-            <li>
+          <ul className={styles.ul}>
+            <li className={styles.li}>
               <Link to="/">Homepage</Link>
             </li>
-            <li>
+            <li className={styles.li}>
               <Link to="/about">About</Link>
             </li>
           </ul>
         </nav>
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
