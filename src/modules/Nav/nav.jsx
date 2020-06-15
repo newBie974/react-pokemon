@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
@@ -13,30 +10,16 @@ const Nav = ({
   Homepage
 }) => {
   return (
-    <Router>
-      <div>
-        <nav className={styles.nav}>
-          <ul className={styles.ul}>
-            <li className={styles.li}>
-              <Link to="/">Homepage</Link>
-            </li>
-            <li className={styles.li}>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <nav className={styles.nav}>
+      <ul className={styles.ul}>
+        <li className={styles.li}>
+          <Link to="/">Homepage</Link>
+        </li>
+        <li className={styles.li}>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
+    </nav>
   )
 }
 

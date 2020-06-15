@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+import pokeApi from '../../api/pokemon';
+
 import Card from '../../modules/Card/card';
-// import Button from '../../modules/Button/button';
 
 import styles from './home-page.module.css';
 
@@ -18,14 +19,18 @@ const HomePage = ({
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      setPokemons([
-        { id: '001', name: 'Bulbizare' },
-        { id: '002', name: 'Florizare' },
-        { id: '003', name: 'Pikachu' },
-        { id: '004', name: 'Dracaufeu' },
-      ]);
-    }, 3000);
+    (async function setApiPokemon() {
+      const pokemonFromApi = await pokeApi();
+      setPokemons(pokemonFromApi);
+    })()
+    // setTimeout(() => {
+    //   setPokemons([
+    //     { id: '001', name: 'Bulbizare' },
+    //     { id: '002', name: 'Florizare' },
+    //     { id: '003', name: 'Pikachu' },
+    //     { id: '004', name: 'Dracaufeu' },
+    //   ]);
+    // }, 3000);
   }, []);
   return (
     <section className={styles.homepage}>

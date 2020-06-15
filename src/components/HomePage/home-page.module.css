@@ -1,5 +1,7 @@
 .homepage {
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .content {
@@ -8,6 +10,5 @@
 }
 
 .cards {
-  display: flex;
-  justify-content: space-between;
+  flex-grow: 1;
 }
