@@ -1,9 +1,14 @@
 .header {
-  height: 60px;
+  height: 40px;
   width: 100%;
-  background-color: #EAE0D5;
+  background-color: #0B4F6C;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+}
+
+.content {
+  font-family: 'Roboto';
+  display: inline-block;
 }

@@ -10,6 +10,12 @@ const HomePage = ({
 }) => {
   const [pokemon, setPokemons] = useState([]);
   const [choosenPokemon, setChoosenPokemon] = useState(null);
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const handleChoosenPokemon = (name) => {
+    setSelectedCard('cardselected')
+    setChoosenPokemon(name);
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,24 +27,23 @@ const HomePage = ({
       ]);
     }, 3000);
   }, []);
-
-  const handleChoosenPokemon = (name) => {
-    setChoosenPokemon(name);
-  }
   return (
     <section className={styles.homepage}>
-      { !pokemon.length &&
-        <h2> Aucun pokémon de disponible, en cours de chargement... </h2>
+      { pokemon && pokemon.length
+        ?
+        <div className={styles.cards}>
+          { pokemon.map(({ id, name, link }) =>
+            <Card
+              key={id}
+              name={name}
+              link={link}
+              number={id}
+              theme={selectedCard}
+              onClick={() => handleChoosenPokemon(name)} />) }
+        </div>
+        : <h2> Aucun pokémon de disponible, en cours de chargement... </h2>
       }
-      <div className={styles.cards}>
-        { pokemon.map(({ id, name, link }) =>
-          <Card
-            key={id}
-            name={name}
-            link={link}
-            number={id}
-            onClick={() => handleChoosenPokemon(name)} />) }
-      </div>
+      
       { choosenPokemon &&
         <h2> Vous avez choisi {choosenPokemon} </h2>
       }

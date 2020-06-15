@@ -9,11 +9,13 @@ const Card = ({
   name,
   img,
   number,
+  theme,
   ...rest
 }) => {
   return (
-    <div className={styles.card} {...rest}>
-      <Avatar link={img}/>
+    <div
+      className={`${styles.card} ${styles[theme]}`} {...rest}>
+      <Avatar link={img} name={name}/>
       <div className={styles.container}>
         <h4>{number}</h4>
         <p>{name}</p>
@@ -24,9 +26,14 @@ const Card = ({
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,
+  number: PropTypes.string,
+  theme: PropTypes.oneOf([
+    'cardselected'
+  ])
 }
 
 Card.defaultProps = {
-  name: 'card name'
+  name: 'card name',
+  number: 'number'
 }
 export default Card;
