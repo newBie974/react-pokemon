@@ -28,7 +28,8 @@ Card.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string,
   theme: PropTypes.oneOf([
-    'cardselected'
+    'cardselected',
+    'flextheme'
   ])
 }
 

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import styles from './about.module.css';
+
 const About = ({
   ...rest
 }) => {
   
   return(
-    <div> Coucou about </div>
+    <section className={styles.about}> Coucou about </section>
   )
 }
 

@@ -9,9 +9,7 @@ const Routing = () => (
     <Route path="/about">
       <About />
     </Route>
-    <Route path="/">
-      <HomePage />
-    </Route>
+    <Route exact path="/" component={HomePage} />
   </Switch>
 )
 
